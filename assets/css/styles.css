@@ -1,0 +1,1006 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: #007399;
+  --gradient-color: linear-gradient(90deg,
+      #17334f,
+      #185767);
+  --title-color: #18334e;
+  --text-color: #1d262f;
+  --white-color: #fff;
+  --body-color: linear-gradient(to bottom, #f7fbff, rgb(196, 219, 251));
+  --body-color1: linear-gradient(to bottom, #00b38c, #012d36);
+  --body-color2: linear-gradient(to bottom, #012d36, #00062c);
+  --body-color3: linear-gradient(to bottom, #00062c, #000000);
+  --body-color4: linear-gradient(to bottom, #000000, #2d0f00);
+
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Lora", serif;
+  --biggest-font-size: 2rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --textpc-font-size: 1.2rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* ============CONSTANTES======== */
+
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: var(--body-color3);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  background: var(--body-color);
+  color: var(--text-color);
+  font-weight: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1366px;
+  margin: auto;
+}
+
+/*=============== HEADER & NAV ===============*/
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-color: #f7fbff;
+  flex-direction: row;
+
+}
+
+.logo {
+  width: 60px;
+  cursor: pointer;
+  margin-right: 180px;
+  margin-left: auto;
+}
+
+/* DE ESTA FORMA ALINEAMOS EN HORIZONTAL */
+.nav__menu,
+.nav__list,
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/*Menu de nav hamburguesa*/
+.abrir-menu,
+.cerrar-menu {
+  display: none;
+}
+
+/* NAVEGACION DE IDIOMAS */
+
+.btnIdiomas,
+.cerrar-idiomas {
+  display: block;
+}
+
+.btnIdiomas.novisible {
+  display: none;
+}
+
+.nav__idiomas {
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  gap: 1rem;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  align-items: flex-start;
+  background-color: #1d262f;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+
+}
+
+.idiomas__list {
+  flex-direction: column;
+}
+
+.idiomas__list li a {
+  color: #ececec;
+}
+
+.nav__idiomas.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav__link-l {
+  display: flex;
+  align-items: center;
+}
+
+.nav__link-l img {
+  width: 40px;
+  height: 50px;
+  border-radius: 120%;
+  margin-right: .5rem;
+}
+
+/* ========BOTONES DE LENGUAJES========== */
+.btnIdiomas,
+.cerrar-idiomas {
+  background-color: #2f9fc5;
+  border: 1px solid rgba(54, 54, 54, 0.6);
+  font-weight: 600;
+  position: relative;
+  outline: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 36px;
+  width: 50px;
+  opacity: 1;
+}
+
+.idiomas__list li {
+  margin: 10px;
+  margin-top: 1rem;
+
+}
+
+
+/*=============== SECCION COMPRA ===============*/
+.container .home {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+}
+
+/* ==================SECCION DE COMO FUNCIONA============ */
+.how-it-works {
+  background-color: #2f9fc5;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.how-it-works-co {
+  display: flex;
+  margin: auto;
+  padding: 0 80px;
+}
+
+.card-explain-works {
+  margin: 10px;
+  border: 2px solid #FFF;
+  border-radius: 11px;
+  padding: 22px;
+  box-shadow: 6px 6px 10px -1px rgba(42, 8, 90, 0.15);
+}
+
+.card-explain-works p {
+  color: #EDFBFF;
+  font-size: 18px;
+  /* text-align: justify; */
+}
+
+.card-explain-works h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* #edf9ff */
+.title-how-it-works {
+  color: white;
+}
+
+/*=============== SECCION DE RAZONES ===============*/
+/* Sistemas globales que usa el acordion en todas las pantallas*/
+.razon {
+  padding: 2rem 0rem;
+}
+
+.razon-title {
+  margin-bottom: 2.5rem;
+}
+
+.razones li label {
+  cursor: pointer;
+}
+
+label::before {
+  content: '+';
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.acordion .razones-text {
+  color: #555;
+  padding: 0 10px;
+  line-height: 26px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s, padding 0.5s;
+}
+
+.acordion li {
+  list-style: none;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #eef0ff;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.acordion input[type="radio"]:checked+label+.razones-text {
+  max-height: 400px;
+  padding: 10px 10px 20px;
+}
+
+.acordion input[type="radio"]:checked+label::before {
+  content: '-';
+}
+
+/* ===========SECCION ACORDION VENTAJAS=========  */
+.ventajas-title {
+  text-align: center;
+  font-size: 33px;
+  margin-bottom: 3rem;
+}
+
+.ventajas-container li label {
+  cursor: pointer;
+}
+
+label::before {
+  content: '+';
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.acordion-advantages .advantages-text {
+  color: #555;
+  padding: 0 10px;
+  line-height: 26px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s, padding 0.5s;
+}
+
+.acordion-advantages li {
+  list-style: none;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #eef0ff;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.acordion-advantages input[type="radio"]:checked+label+.advantages-text {
+  max-height: 400px;
+  padding: 10px 10px 20px;
+}
+
+.acordion-advantages input[type="radio"]:checked+label::before {
+  content: '-';
+}
+
+/* =======FAQ SECCION======== */
+.acordion-faq li label {
+  cursor: pointer;
+}
+
+.acordion-faq .faq-content {
+  color: #555;
+  padding: 0 10px;
+  line-height: 26px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s, padding 0.5s;
+}
+
+.acordion-faq li {
+  list-style: none;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #eef0ff;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+
+.acordion-faq input[type="radio"]:checked+label+.faq-content {
+  max-height: 400px;
+  padding: 10px 10px 20px;
+}
+
+.acordion-faq input[type="radio"]:checked+label::before {
+  content: '-';
+}
+
+/* =============ROADMAP========== */
+.roadmap {
+  margin-top: 20px;
+  padding: 2rem 0rem;
+}
+
+.roadmap-title {
+  text-align: center;
+  font-size: 33px;
+}
+
+.card-contenedor {
+  max-width: 1366px;
+  width: 100%;
+  background-color: #f5f5f500;
+  padding: 40px 0;
+  margin: auto;
+}
+
+.card-roadmap {
+  position: relative;
+  border: 1px solid #777777;
+  background: rgba(157, 171, 184, 0.226);
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 32px;
+  min-height: 599px;
+  margin: auto;
+
+}
+
+.card-roadmap p {
+  margin: 18px 22px 22px 0px;
+  font-size: 16px;
+}
+
+.card-roadmap h4 {
+  margin-top: .5rem;
+  color: #007399;
+  font-size: 25px;
+}
+
+.card-roadmap h3 {
+  font-size: 18px;
+}
+
+/* =======SLIDE DE ROADMAP======== */
+
+.slide-content {
+  margin: 0 40px;
+}
+
+/*========= TOKENOMICS ========= */
+
+.tokenomics-contenedor-aux {
+  display: flex;
+  align-items: center;
+}
+
+.boxcard-tokenomics {
+  background-color: rgba(157, 171, 184, 0.226);
+  border-radius: .5rem;
+}
+
+.tokenomics-title {
+  font-size: 33px;
+}
+
+.chart-container {
+  width: 400px;
+  height: 400px;
+  margin-right: 28px;
+}
+
+.my-chart {
+  width: max-content;
+  height: max-content;
+}
+
+.legend {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.uno {
+  background-color: #37a3eb;
+}
+
+.dos {
+  background-color: #fe6385;
+}
+
+.tres {
+  background-color: #ff9f40;
+}
+
+.cuatro {
+  background-color: #ffcc57;
+}
+
+.cinco {
+  background-color: #4ac1c0;
+}
+
+.tokenomics-enucement {
+  display: flex;
+  align-items: center;
+}
+
+/* ==========IMAGE SLIDER FEATURED========== */
+.featured {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.featured-text {
+  text-align: center;
+  margin-bottom: 30px;
+  margin: auto;
+  width: 100%;
+}
+
+.slider {
+  width: 120vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider .slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  -webkit-animation: scroll 40s linear infinite;
+  width: calc(220px * 14);
+}
+
+.slider .slide {
+  width: 400px;
+}
+
+.featured-slider .slide img {
+  width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(calc(-250px*7));
+    transform: translateX(calc(-250px*7));
+  }
+}
+
+/* SECTION FOOTER */
+.piso {
+  padding: 80px;
+  background: #5aa4f8;
+}
+
+/* Navigation for mobile devices */
+
+
+/* Show menu */
+
+
+/* Change background header */
+
+
+/*=============== HOME ===============*/
+
+
+/*=============== BREAKPOINTS ===============*/
+
+/* For small devices */
+
+/*Devices smaller than 767px*/
+@media screen and (max-width: 767px) {
+
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(52, 56, 65);
+    padding: 2rem;
+    bottom: 0;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+
+  }
+
+  .nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+
+  .nav__list li a {
+    color: #fff;
+  }
+
+
+  /* BUTTONS */
+  .abrir-menu,
+  .cerrar-menu {
+    margin-left: .5rem;
+    background-color: #2f9fc5;
+    border: 1px solid rgba(54, 54, 54, 0.6);
+    font-weight: 600;
+    position: relative;
+    outline: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 36px;
+    width: 50px;
+    opacity: 1;
+  }
+
+  /* SECCION DE COMPRA */
+  .home,
+  .detalles {
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* CENTRAR CONTENIDO HOME */
+  .titulo,
+  .parrafo {
+    text-align: center;
+  }
+
+  /* CENTRAR BOTONES */
+  .botones-home {
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+  }
+
+  /* ESTILO DE BOTONES */
+  .whitepaper,
+  .auditoria {
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: var(--text-color);
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    margin-top: .5rem;
+  }
+
+  /* ESPACIO DE BOTONES */
+  .whitepaper {
+    margin-right: .5rem;
+  }
+
+  .auditoria {
+    margin-left: .5rem;
+  }
+
+  /* IMAGEN NO MOSTRADA */
+  .img-home {
+    display: none;
+  }
+
+  /* SECCION ABOUT */
+  .que-es {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .title-que-es,
+  .p-que-es {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .title-que-es {
+    font-size: var(--biggest-font-size);
+  }
+
+  .p-que-es,
+  .contaminacion-texto {
+    margin-bottom: 3rem;
+    font-size: var(--normal-font-size);
+  }
+
+  /* SECCION DE CONTAMINACION */
+  .title-contaminacion,
+  .contaminacion-texto {
+    text-align: center;
+    margin-top: 1.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .title-contaminacion {
+    font-size: 1.8rem;
+  }
+
+  /* SECCION UTILIDAD */
+  .titulo-funcion,
+  .funcion-texto {
+    text-align: center;
+    margin-top: 1.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .titulo-funcion {
+    font-size: var(--biggest-font-size);
+  }
+
+  .funcion-texto {
+    margin-bottom: 3rem;
+    font-size: var(--normal-font-size);
+  }
+
+  /* RAZONES SECCION */
+
+  .razones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .razon-title {
+    font-size: var(--biggest-font-size);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .razones-text {
+    text-align: flex-start;
+  }
+
+  /* TOKENOMICS */
+  .tokenomics {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .tokenomics-text ul li {
+    margin: 1rem 20px;
+    color: #000000;
+  }
+
+  .boxcard-tokenomics {
+    padding: 10px 1rem;
+    margin: 1rem;
+    background-color: #c1cdd9;
+    border-radius: .5rem;
+  }
+
+  .tokenomics-title {
+    margin: 2rem;
+    font-size: var(--biggest-font-size);
+  }
+
+  /* ACORDION FAQ  */
+  .acordion-seccion-faq {
+    margin: 1rem;
+  }
+
+  .faq-container-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  .faq-text {
+    text-align: center;
+  }
+}
+
+/* For taller devices */
+
+
+/* For medium devices */
+/*Devices between 768px and 1024px*/
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+/* For large devices */
+
+/* For PC */
+@media screen and (min-width: 770px) {
+
+  /* SECTION HOME */
+  .header {
+    padding: 10px 25px;
+    align-items: center;
+  }
+
+  .nav__item {
+    font-size: var(--small-font-size);
+  }
+
+  .btnIdiomas {
+    margin: 0px 15px;
+  }
+
+  .home {
+    display: flex;
+    margin: 30px 75px;
+  }
+
+  .detalles {
+    width: 700px;
+  }
+
+  .titulo {
+    font-size: 45px;
+  }
+
+  .parrafo {
+    margin-top: .5rem;
+    font-size: 1.2rem;
+  }
+
+  .buy {
+    margin: 0px 20px;
+    margin-left: 40px;
+  }
+
+  .whitepaper,
+  .auditoria {
+    margin: 15px 15px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .img-home {
+    width: 500px;
+    margin: 0px -20px 0px 180px;
+  }
+
+  .about {
+    margin: 20px 75px;
+    padding: 10px 25px;
+    align-items: center;
+  }
+
+  .que-es {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .p-que-es {
+    font-size: var(--textpc-font-size);
+    margin: 1em;
+    text-align: center;
+  }
+
+  .title-que-es {
+    font-size: 33px;
+    margin: 20px;
+  }
+
+  /* how-it-works SECTION  #2f9fc5; */
+  .how-it-works {
+    display: flex;
+  }
+
+  .how-it-works-imagen {
+    width: 900px;
+    margin: 80px 20px;
+  }
+
+  .how-it-works-container {
+    margin: 0px 30px;
+    width: 1200px;
+  }
+
+  .title-how-it-works {
+    margin: 20px;
+    text-align: center;
+    font-size: 33px;
+  }
+
+  /* UTILIDAD SECTION  */
+  .utilidad {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 20px 75px;
+  }
+
+  .utilidad-image {
+    width: 500px;
+  }
+
+  .titulo-funcion {
+    text-align: center;
+    font-size: 33px;
+  }
+
+  .funcion-texto {
+    margin: 20px 60px;
+    width: 550px;
+    font-size: 1.2rem;
+  }
+
+  /* RAZONES */
+  .razon {
+    display: flex;
+    margin: 20px 75px;
+  }
+
+  .razones-image {
+    width: 700px;
+    margin-left: 20px;
+  }
+
+  .razon-title {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 33px;
+  }
+
+  /* ============VENTAJAS COMPETITIVAS========= */
+  .ventajas {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin: 75px 75px;
+  }
+
+  .ventajas-img {
+    width: 800px;
+    margin: 20px;
+    margin-left: 30px;
+  }
+
+  .ventaja-title {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 33px;
+  }
+
+
+  /* TOKENOMICS */
+  .tokenomics {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 20px 75px;
+  }
+
+  .tokenomics-text {
+    align-items: flex-start;
+  }
+
+  .tokenomics-title {
+    text-align: center;
+    margin: 30px;
+  }
+
+  .boxcard-tokenomics {
+    margin: 10px;
+    padding: 20px;
+    margin-left: 10px;
+  }
+
+  .faq {
+    display: flex;
+    margin: 20px 90px;
+  }
+
+  .faq-title {
+    margin: 20px;
+    font-size: 31px;
+  }
+
+  .faq-text {
+    margin: 20px;
+    font-size: var(--textpc-font-size);
+  }
+
+  /* FOOTER */
+
+}
+
+/* For 2K resolutions (2048 x 1152) */
